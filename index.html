@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opti Frame | Lentes ópticos, lentes de sol y estilo</title>
+    <meta name="description" content="Descubre lentes ópticos y de sol con estilo, calidad y asesoría personalizada en Opti Frame. Ver bien también es verte bien.">
+    
+    <!-- Open Graph / Redes Sociales -->
+    <meta property="og:title" content="Opti Frame | Lentes ópticos, lentes de sol y estilo">
+    <meta property="og:description" content="Descubre lentes que combinan visión, comodidad y estilo. Encuentra la montura ideal con asesoría personalizada.">
+    <meta property="og:type" content="website">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        opti: {
+                            black: '#111111',
+                            dark: '#292929',
+                            gray: '#888888',
+                            light: '#F3F3F3',
+                            accent: '#333333'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- FontAwesome for minimal icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Custom smooth styles & scrollbar */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #111111;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F3F3F3;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888888;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #292929;
+        }
+    </style>
+</head>
+<body class="bg-white text-opti-black antialiased selection:bg-opti-black selection:text-white">
+
+    <!-- CONFIGURACIÓN DE WHATSAPP (MODIFICAR AQUÍ EL NÚMERO COMERCIAL) -->
+    <script>
+        // Reemplazar 'NUMERO_COMERCIAL' con el número en formato internacional sin símbolos (ej: 5491123456789)
+        const WHATSAPP_CONFIG = {
+            phoneNumber: "NUMERO_COMERCIAL", // Dejar "NUMERO_COMERCIAL" hasta disponer del número real
+            defaultMessage: "Hola, estoy interesado/a en conocer más sobre los productos de Opti Frame. ¿Me podrían ayudar con información sobre modelos y precios?"
+        };
+
+        function getWhatsAppLink(customMessage = null) {
+            const msg = encodeURIComponent(customMessage || WHATSAPP_CONFIG.defaultMessage);
+            if (WHATSAPP_CONFIG.phoneNumber === "NUMERO_COMERCIAL") {
+                // Alerta elegante integrada en vez de alert() nativo
+                return "#";
+            }
+            return `https://wa.me/${WHATSAPP_CONFIG.phoneNumber}?text=${msg}`;
+        }
+
+        function handleWhatsAppClick(customMessage = null, e) {
+            if (WHATSAPP_CONFIG.phoneNumber === "NUMERO_COMERCIAL") {
+                if (e) e.preventDefault();
+                openWhatsappModal();
+            }
+        }
+    </script>
+
+    <!-- Modal informativo para WhatsApp no configurado -->
+    <div id="whatsapp-modal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-2xl p-8 max-w-md w-full mx-4 shadow-2xl transform scale-95 transition-transform duration-300" id="whatsapp-modal-content">
+            <div class="flex justify-between items-center mb-4">
+                <div class="flex items-center space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center text-green-600">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-opti-black">Canal de WhatsApp</h3>
+                </div>
+                <button onclick="closeWhatsappModal()" class="text-opti-gray hover:text-opti-black transition-colors">
+                    <i class="fa-solid fa-xmark text-xl"></i>
+                </button>
+            </div>
+            <p class="text-opti-gray text-sm mb-6 leading-relaxed">
+                El número comercial de WhatsApp de <strong class="text-opti-black">Opti Frame</strong> está pendiente de activación final. En cuanto se incorpore, este botón conectará de forma automática con nuestros asesores.
+            </p>
+            <div class="bg-opti-light p-4 rounded-xl mb-6">
+                <p class="text-xs font-medium text-opti-dark mb-1">Mensaje configurado para el enlace:</p>
+                <p class="text-xs text-opti-gray italic">"Hola, estoy interesado/a en conocer más sobre los productos de Opti Frame..."</p>
+            </div>
+            <button onclick="closeWhatsappModal()" class="w-full py-3 bg-opti-black text-white rounded-xl font-medium text-sm hover:bg-opti-dark transition-colors shadow-lg shadow-black/10">
+                Entendido
+            </button>
+        </div>
+    </div>
+
+    <!-- SECCIÓN 1. ENCABEZADO Y NAVEGACIÓN -->
+    <header id="header" class="fixed top-0 left-0 right-0 z-40 bg-white/90 backdrop-blur-md border-b border-opti-light transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logotipo -->
+            <a href="#inicio" class="flex items-center space-x-2 group">
+                <span class="text-2xl font-bold tracking-tighter text-opti-black group-hover:opacity-80 transition-opacity">
+                    OPTI FRAME
+                </span>
+            </a>
+
+            <!-- Navegación Desktop -->
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium text-opti-dark">
+                <a href="#inicio" class="hover:text-opti-black transition-colors">Inicio</a>
+                <a href="#categorias" class="hover:text-opti-black transition-colors">Nuestros productos</a>
+                <a href="#opticos" class="hover:text-opti-black transition-colors">Lentes ópticos</a>
+                <a href="#sol" class="hover:text-opti-black transition-colors">Lentes de sol</a>
+                <a href="#nosotros" class="hover:text-opti-black transition-colors">Sobre nosotros</a>
+                <a href="#contacto" class="hover:text-opti-black transition-colors">Contacto</a>
+            </nav>
+
+            <!-- CTA Desktop -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a id="nav-whatsapp-btn" href="#" onclick="handleWhatsAppClick(null, event)" class="inline-flex items-center space-x-2 bg-opti-black text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-opti-dark transition-all duration-300 shadow-sm">
+                    <i class="fa-brands fa-whatsapp text-base"></i>
+                    <span>Consultar por WhatsApp</span>
+                </a>
+            </div>
+
+            <!-- Botón menú móvil -->
+            <button id="mobile-menu-button" class="lg:hidden text-opti-black p-2 focus:outline-none" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Menú Desplegable Móvil -->
+        <div id="mobile-menu" class="lg:hidden hidden bg-white border-b border-opti-light px-6 py-6 space-y-4 shadow-xl">
+            <a href="#inicio" class="block text-base font-medium text-opti-black hover:text-opti-gray transition-colors mobile-link">Inicio</a>
+            <a href="#categorias" class="block text-base font-medium text-opti-black hover:text-opti-gray transition-colors mobile-link">Nuestros productos</a>
+            <a href="#opticos" class="block text-base font-medium text-opti-black hover:text-opti-gray transition-colors mobile-link">Lentes ópticos</a>
+            <a href="#sol" class="block text-base font-medium text-opti-black hover:text-opti-gray transition-colors mobile-link">Lentes de sol</a>
+            <a href="#nosotros" class="block text-base font-medium text-opti-black hover:text-opti-gray transition-colors mobile-link">Sobre nosotros</a>
+            <a href="#contacto" class="block text-base font-medium text-opti-black hover:text-opti-gray transition-colors mobile-link">Contacto</a>
+            <div class="pt-4 border-t border-opti-light">
+                <a href="#" onclick="handleWhatsAppClick(null, event)" class="flex items-center justify-center space-x-2 w-full bg-opti-black text-white py-3 rounded-xl text-sm font-medium hover:bg-opti-dark transition-colors">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>Consultar por WhatsApp</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Botón flotante de WhatsApp -->
+    <aside aria-label="Soporte por WhatsApp" class="fixed bottom-6 right-6 z-40">
+        <a href="#" onclick="handleWhatsAppClick('Hola, me gustaría recibir asesoría personalizada sobre lentes en Opti Frame.', event)" class="flex items-center justify-center w-14 h-14 bg-neutral-900 text-white rounded-full shadow-2xl hover:bg-black transition-all duration-300 hover:scale-105 group relative" aria-label="Consultar por WhatsApp">
+            <i class="fa-brands fa-whatsapp text-2xl"></i>
+            <span class="absolute right-full mr-3 bg-white text-opti-black text-xs font-medium px-3 py-1.5 rounded-lg shadow-md whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none border border-opti-light">
+                ¿Necesitas asesoría?
+            </span>
+        </a>
+    </aside>
+
+    <main>
+        <!-- SECCIÓN 2. HERO PRINCIPAL -->
+        <section id="inicio" class="pt-32 pb-20 lg:pt-40 lg:pb-32 bg-opti-light/50 relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Columna de Texto -->
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                        <div class="inline-flex items-center space-x-2 bg-white px-4 py-1.5 rounded-full border border-opti-light shadow-sm">
+                            <span class="w-2 h-2 rounded-full bg-opti-black"></span>
+                            <span class="text-xs font-semibold uppercase tracking-wider text-opti-dark">Colección Exclusiva Opti Frame</span>
+                        </div>
+                        
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-opti-black leading-[1.1]">
+                            En Opti Frame, ver bien también es verte bien.
+                        </h1>
+                        
+                        <p class="text-lg text-opti-gray max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Descubre lentes que combinan visión, comodidad y estilo. Encuentra la montura ideal para ti con nuestra asesoría personalizada.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                            <a href="#categorias" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-opti-black text-white px-8 py-4 rounded-xl text-sm font-semibold hover:bg-opti-dark transition-all duration-300 shadow-lg shadow-black/10">
+                                <span>Explorar colección</span>
+                                <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </a>
+                            <a href="#" onclick="handleWhatsAppClick('Hola, me gustaría explorar las colecciones y recibir asesoría en Opti Frame.', event)" class="w-full sm:w-auto inline-flex items-center justify-center space-x-2 bg-white text-opti-black border border-opti-dark/20 px-8 py-4 rounded-xl text-sm font-semibold hover:bg-opti-light transition-all duration-300">
+                                <i class="fa-brands fa-whatsapp text-lg text-green-600"></i>
+                                <span>Consultar por WhatsApp</span>
+                            </a>
+                        </div>
+
+                        <!-- Estadísticas sutiles -->
+                        <div class="grid grid-cols-3 gap-6 pt-8 border-t border-opti-light/80 max-w-lg mx-auto lg:mx-0">
+                            <div>
+                                <p class="text-2xl font-bold text-opti-black">100%</p>
+                                <p class="text-xs text-opti-gray mt-1">Asesoría personalizada</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-opti-black">Moda & Salud</p>
+                                <p class="text-xs text-opti-gray mt-1">Enfoque integral</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-bold text-opti-black">Tendencia</p>
+                                <p class="text-xs text-opti-gray mt-1">Monturas actuales</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna de Imagen Hero -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            <!-- Marco decorativo de fondo -->
+                            <div class="absolute -inset-4 bg-gradient-to-tr from-opti-gray/20 to-transparent rounded-3xl transform rotate-1 -z-10"></div>
+                            
+                            <img src="Retrato corporativo de mujer sonriente.png" 
+                                 alt="Retrato de asesora profesional en Opti Frame" 
+                                 class="w-full h-[480px] object-cover rounded-2xl shadow-2xl border border-white"
+                                 onerror="this.src='https://placehold.co/600x800/111111/ffffff?text=Opti+Frame+Eyewear'">
+                            
+                            <!-- Tarjeta flotante superpuesta -->
+                            <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md p-4 rounded-xl border border-white/40 shadow-lg flex items-center space-x-4">
+                                <div class="w-10 h-10 rounded-lg bg-opti-black flex items-center justify-center text-white shrink-0">
+                                    <i class="fa-solid fa-glasses text-lg"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-semibold text-opti-dark uppercase tracking-wider">Asesoría Personalizada</p>
+                                    <p class="text-sm font-bold text-opti-black">Expertos dedicados a tu salud visual</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 3. CATEGORÍAS DE PRODUCTOS -->
+        <section id="categorias" class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-opti-gray">Nuestras categorías</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-opti-black mt-2 tracking-tight">Diseñados para cada estilo de vida</h2>
+                    <p class="text-opti-gray mt-4 text-base">Explora nuestra selección especializada en salud visual, comodidad y tendencias globales.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Categoría 1 -->
+                    <div class="group bg-opti-light rounded-2xl overflow-hidden border border-opti-light hover:border-opti-gray/40 transition-all duration-300 flex flex-col">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1574258495973-f010dfbb5371?auto=format&fit=crop&w=600&q=80" alt="Lentes ópticos" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/292929/ffffff?text=Lentes+Opticos'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-opti-black text-xs font-semibold px-3 py-1 rounded-full">Salud Visual</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-opti-black mb-2">Lentes ópticos</h3>
+                                <p class="text-opti-gray text-sm leading-relaxed">Monturas ergonómicas y funcionales para el uso diario con máxima nitidez visual.</p>
+                            </div>
+                            <div class="pt-6">
+                                <a href="#" onclick="handleWhatsAppClick('Hola, me interesan los modelos de la categoría Lentes Ópticos.', event)" class="inline-flex items-center space-x-2 text-sm font-semibold text-opti-black group-hover:text-opti-gray transition-colors">
+                                    <span>Consultar modelos</span>
+                                    <i class="fa-solid fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 2 -->
+                    <div class="group bg-opti-light rounded-2xl overflow-hidden border border-opti-light hover:border-opti-gray/40 transition-all duration-300 flex flex-col">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80" alt="Lentes de sol" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/292929/ffffff?text=Lentes+de+Sol'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-opti-black text-xs font-semibold px-3 py-1 rounded-full">Protección UV</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-opti-black mb-2">Lentes de sol</h3>
+                                <p class="text-opti-gray text-sm leading-relaxed">Protección UV avanzada con diseños sofisticados y monturas en tendencia.</p>
+                            </div>
+                            <div class="pt-6">
+                                <a href="#" onclick="handleWhatsAppClick('Hola, me interesan los modelos de la categoría Lentes de Sol.', event)" class="inline-flex items-center space-x-2 text-sm font-semibold text-opti-black group-hover:text-opti-gray transition-colors">
+                                    <span>Consultar modelos</span>
+                                    <i class="fa-solid fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 3 -->
+                    <div class="group bg-opti-light rounded-2xl overflow-hidden border border-opti-light hover:border-opti-gray/40 transition-all duration-300 flex flex-col">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Monturas para mujer" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/292929/ffffff?text=Monturas+Mujer'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-opti-black text-xs font-semibold px-3 py-1 rounded-full">Colección Femenina</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-opti-black mb-2">Monturas para mujer</h3>
+                                <p class="text-opti-gray text-sm leading-relaxed">Estilos delicados, geométricos y vanguardistas que realzan la personalidad femenina.</p>
+                            </div>
+                            <div class="pt-6">
+                                <a href="#" onclick="handleWhatsAppClick('Hola, me interesan los modelos de la categoría Monturas para Mujer.', event)" class="inline-flex items-center space-x-2 text-sm font-semibold text-opti-black group-hover:text-opti-gray transition-colors">
+                                    <span>Consultar modelos</span>
+                                    <i class="fa-solid fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 4 -->
+                    <div class="group bg-opti-light rounded-2xl overflow-hidden border border-opti-light hover:border-opti-gray/40 transition-all duration-300 flex flex-col">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" alt="Monturas para hombre" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/292929/ffffff?text=Monturas+Hombre'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-opti-black text-xs font-semibold px-3 py-1 rounded-full">Colección Masculina</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-opti-black mb-2">Monturas para hombre</h3>
+                                <p class="text-opti-gray text-sm leading-relaxed">Diseños sobrios, modernos y duraderos adaptados a la comodidad masculina.</p>
+                            </div>
+                            <div class="pt-6">
+                                <a href="#" onclick="handleWhatsAppClick('Hola, me interesan los modelos de la categoría Monturas para Hombre.', event)" class="inline-flex items-center space-x-2 text-sm font-semibold text-opti-black group-hover:text-opti-gray transition-colors">
+                                    <span>Consultar modelos</span>
+                                    <i class="fa-solid fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 5 -->
+                    <div class="group bg-opti-light rounded-2xl overflow-hidden border border-opti-light hover:border-opti-gray/40 transition-all duration-300 flex flex-col">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80" alt="Lentes para niños" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/292929/ffffff?text=Lentes+Ninos'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-opti-black text-xs font-semibold px-3 py-1 rounded-full">Infantil</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-opti-black mb-2">Lentes para niños</h3>
+                                <p class="text-opti-gray text-sm leading-relaxed">Monturas flexibles, ultralivianas y seguras especialmente diseñadas para los más pequeños.</p>
+                            </div>
+                            <div class="pt-6">
+                                <a href="#" onclick="handleWhatsAppClick('Hola, me interesan los modelos de la categoría Lentes para Niños.', event)" class="inline-flex items-center space-x-2 text-sm font-semibold text-opti-black group-hover:text-opti-gray transition-colors">
+                                    <span>Consultar modelos</span>
+                                    <i class="fa-solid fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Categoría 6 -->
+                    <div class="group bg-opti-light rounded-2xl overflow-hidden border border-opti-light hover:border-opti-gray/40 transition-all duration-300 flex flex-col">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=600&q=80" alt="Cristales monofocales y multifocales" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/600x400/292929/ffffff?text=Cristales+Opticos'">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                            <span class="absolute top-4 left-4 bg-white/90 backdrop-blur-sm text-opti-black text-xs font-semibold px-3 py-1 rounded-full">Tecnología Visual</span>
+                        </div>
+                        <div class="p-6 flex flex-col flex-grow justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-opti-black mb-2">Cristales monofocales y multifocales</h3>
+                                <p class="text-opti-gray text-sm leading-relaxed">Tratamientos antirreflejo, filtros de luz azul y alta precisión graduada.</p>
+                            </div>
+                            <div class="pt-6">
+                                <a href="#" onclick="handleWhatsAppClick('Hola, me interesa conocer más sobre cristales monofocales y multifocales.', event)" class="inline-flex items-center space-x-2 text-sm font-semibold text-opti-black group-hover:text-opti-gray transition-colors">
+                                    <span>Consultar modelos</span>
+                                    <i class="fa-solid fa-arrow-right text-xs transform group-hover:translate-x-1 transition-transform"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 4. PRODUCTOS DESTACADOS -->
+        <section id="opticos" class="py-24 bg-opti-light/30 border-t border-opti-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-opti-gray">Galería comercial</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-opti-black mt-2 tracking-tight">Productos destacados</h2>
+                    </div>
+                    <p class="text-opti-gray mt-4 md:mt-0 max-w-md text-sm">
+                        Monturas seleccionadas por su calidad de construcción, ergonomía y estética superior.
+                    </p>
+                </div>
+
+                <!-- Cuadrícula de productos editables -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    
+                    <!-- Producto 1 -->
+                    <div class="bg-white rounded-2xl p-4 border border-opti-light hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-60 rounded-xl overflow-hidden bg-opti-light mb-4">
+                            <span class="absolute top-3 left-3 z-10 bg-opti-black text-white text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md">Novedad</span>
+                            <img src="https://images.unsplash.com/photo-1591076482161-42ce6da69f67?auto=format&fit=crop&w=500&q=80" alt="Modelo Aero Classic" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/292929/ffffff?text=Modelo+Aero'">
+                        </div>
+                        <div>
+                            <span class="text-xs text-opti-gray font-medium uppercase tracking-wider">Lentes Ópticos</span>
+                            <h3 class="text-lg font-bold text-opti-black mt-1">Modelo Aero Classic</h3>
+                            <p class="text-xs text-opti-gray mt-1 line-clamp-2">Montura liviana de acetato con acabado pulido a mano y alta durabilidad.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-opti-light flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-opti-gray block">Precio</span>
+                                <span class="text-sm font-bold text-opti-black">Consultar precio</span>
+                            </div>
+                            <a href="#" onclick="handleWhatsAppClick('Hola, me interesa el modelo Aero Classic de Lentes Ópticos. ¿Me podrían dar información y precio?', event)" class="bg-opti-black text-white p-2.5 rounded-xl hover:bg-opti-dark transition-colors" title="Consultar por WhatsApp">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Producto 2 -->
+                    <div class="bg-white rounded-2xl p-4 border border-opti-light hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-60 rounded-xl overflow-hidden bg-opti-light mb-4">
+                            <span class="absolute top-3 left-3 z-10 bg-opti-dark text-white text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md">Destacado</span>
+                            <img src="https://images.unsplash.com/photo-1511499767150-a48a237f0083?auto=format&fit=crop&w=500&q=80" alt="Modelo Solarium Gold" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/292929/ffffff?text=Modelo+Solarium'">
+                        </div>
+                        <div>
+                            <span class="text-xs text-opti-gray font-medium uppercase tracking-wider">Lentes de Sol</span>
+                            <h3 class="text-lg font-bold text-opti-black mt-1">Modelo Solarium Gold</h3>
+                            <p class="text-xs text-opti-gray mt-1 line-clamp-2">Protección UV400 total con detalles metálicos sutiles y diseño envolvente.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-opti-light flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-opti-gray block">Precio</span>
+                                <span class="text-sm font-bold text-opti-black">Consultar precio</span>
+                            </div>
+                            <a href="#" onclick="handleWhatsAppClick('Hola, me interesa el modelo Solarium Gold de Lentes de Sol. ¿Me podrían dar información y precio?', event)" class="bg-opti-black text-white p-2.5 rounded-xl hover:bg-opti-dark transition-colors" title="Consultar por WhatsApp">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Producto 3 -->
+                    <div id="sol" class="contents"></div>
+                    <div class="bg-white rounded-2xl p-4 border border-opti-light hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-60 rounded-xl overflow-hidden bg-opti-light mb-4">
+                            <span class="absolute top-3 left-3 z-10 bg-opti-gray text-white text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md">Tendencia</span>
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=500&q=80" alt="Modelo Vértice Geometric" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/292929/ffffff?text=Modelo+Vertice'">
+                        </div>
+                        <div>
+                            <span class="text-xs text-opti-gray font-medium uppercase tracking-wider">Monturas Mujer</span>
+                            <h3 class="text-lg font-bold text-opti-black mt-1">Modelo Vértice Geometric</h3>
+                            <p class="text-xs text-opti-gray mt-1 line-clamp-2">Líneas contemporáneas y sofisticadas para un look editorial y moderno.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-opti-light flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-opti-gray block">Precio</span>
+                                <span class="text-sm font-bold text-opti-black">Consultar precio</span>
+                            </div>
+                            <a href="#" onclick="handleWhatsAppClick('Hola, me interesa el modelo Vértice Geometric de Monturas Mujer. ¿Me podrían dar información y precio?', event)" class="bg-opti-black text-white p-2.5 rounded-xl hover:bg-opti-dark transition-colors" title="Consultar por WhatsApp">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Producto 4 -->
+                    <div class="bg-white rounded-2xl p-4 border border-opti-light hover:shadow-xl transition-all duration-300 flex flex-col justify-between group">
+                        <div class="relative h-60 rounded-xl overflow-hidden bg-opti-light mb-4">
+                            <span class="absolute top-3 left-3 z-10 bg-opti-black text-white text-[10px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md">Esencial</span>
+                            <img src="https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?auto=format&fit=crop&w=500&q=80" alt="Modelo Urban Steel" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://placehold.co/400x400/292929/ffffff?text=Modelo+Urban'">
+                        </div>
+                        <div>
+                            <span class="text-xs text-opti-gray font-medium uppercase tracking-wider">Monturas Hombre</span>
+                            <h3 class="text-lg font-bold text-opti-black mt-1">Modelo Urban Steel</h3>
+                            <p class="text-xs text-opti-gray mt-1 line-clamp-2">Estructura de acero inoxidable ligera, resistente y de diseño minimalista.</p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-opti-light flex items-center justify-between">
+                            <div>
+                                <span class="text-xs text-opti-gray block">Precio</span>
+                                <span class="text-sm font-bold text-opti-black">Consultar precio</span>
+                            </div>
+                            <a href="#" onclick="handleWhatsAppClick('Hola, me interesa el modelo Urban Steel de Monturas Hombre. ¿Me podrían dar información y precio?', event)" class="bg-opti-black text-white p-2.5 rounded-xl hover:bg-opti-dark transition-colors" title="Consultar por WhatsApp">
+                                <i class="fa-brands fa-whatsapp text-base"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 5. POR QUÉ ELEGIR OPTI FRAME -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-opti-gray">Nuestros pilares</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-opti-black mt-2 tracking-tight">¿Por qué elegir Opti Frame?</h2>
+                    <p class="text-opti-gray mt-4 text-base">Nos enfocamos en entregar una experiencia integral donde tu salud visual y tu imagen personal van de la mano.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <!-- Beneficio 1 -->
+                    <div class="bg-opti-light p-8 rounded-2xl border border-opti-light hover:border-opti-gray/30 transition-all">
+                        <div class="w-14 h-14 rounded-xl bg-opti-black text-white flex items-center justify-center text-xl mb-6 shadow-md">
+                            <i class="fa-solid fa-eye"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-opti-black mb-3">Mejor visión y comodidad</h3>
+                        <p class="text-opti-gray text-sm leading-relaxed">
+                            Soluciones ópticas adaptadas con precisión a las necesidades visuales de cada persona, asegurando confort durante toda la jornada.
+                        </p>
+                    </div>
+
+                    <!-- Beneficio 2 -->
+                    <div class="bg-opti-light p-8 rounded-2xl border border-opti-light hover:border-opti-gray/30 transition-all">
+                        <div class="w-14 h-14 rounded-xl bg-opti-black text-white flex items-center justify-center text-xl mb-6 shadow-md">
+                            <i class="fa-solid fa-gem"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-opti-black mb-3">Estilo y personalidad</h3>
+                        <p class="text-opti-gray text-sm leading-relaxed">
+                            Monturas modernas, atractivas y en tendencia diseñadas para complementar armónicamente cada tipo de rostro y estilo personal.
+                        </p>
+                    </div>
+
+                    <!-- Beneficio 3 -->
+                    <div class="bg-opti-light p-8 rounded-2xl border border-opti-light hover:border-opti-gray/30 transition-all">
+                        <div class="w-14 h-14 rounded-xl bg-opti-black text-white flex items-center justify-center text-xl mb-6 shadow-md">
+                            <i class="fa-solid fa-handshake"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-opti-black mb-3">Atención personalizada</h3>
+                        <p class="text-opti-gray text-sm leading-relaxed">
+                            Asesoría cercana y profesional para encontrar la mejor alternativa según los requerimientos visuales y el presupuesto de cada cliente.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 6. NUESTRA DIFERENCIA -->
+        <section id="nosotros" class="py-24 bg-opti-black text-white relative overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-6 space-y-6">
+                        <span class="text-xs font-semibold uppercase tracking-widest text-opti-gray">Propuesta de valor</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                            Mucho más que elegir unos lentes.
+                        </h2>
+                        <p class="text-opti-gray text-base leading-relaxed">
+                            En Opti Frame creemos que cada persona merece encontrar unos lentes que se adapten a su visión, personalidad y estilo de vida.
+                        </p>
+                        <p class="text-opti-gray text-base leading-relaxed">
+                            Por eso, ofrecemos una experiencia de compra personalizada, combinando asesoría cercana, variedad de diseños, tendencias actuales y alternativas para diferentes presupuestos. Queremos que encuentres tus lentes ideales y te vayas feliz, satisfecho y seguro de tu elección.
+                        </p>
+                        <div class="pt-4">
+                            <a href="#" onclick="handleWhatsAppClick('Hola, me gustaría conversar con un asesor de Opti Frame.', event)" class="inline-flex items-center space-x-2 bg-white text-opti-black px-6 py-3.5 rounded-xl text-sm font-semibold hover:bg-opti-light transition-colors">
+                                <i class="fa-brands fa-whatsapp text-lg text-green-600"></i>
+                                <span>Hablar con un asesor</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+                        <div class="space-y-4">
+                            <img src="https://images.unsplash.com/photo-1509695507497-903c140c43b0?auto=format&fit=crop&w=500&q=80" alt="Asesoría óptica" class="w-full h-64 object-cover rounded-2xl border border-opti-dark" onerror="this.src='https://placehold.co/400x500/292929/ffffff?text=Asesoria'">
+                            <div class="bg-opti-dark p-6 rounded-2xl border border-opti-gray/20">
+                                <p class="text-2xl font-bold text-white mb-1">Tendencias</p>
+                                <p class="text-xs text-opti-gray">Diseños contemporáneos actualizados constantemente.</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4 pt-8">
+                            <div class="bg-opti-dark p-6 rounded-2xl border border-opti-gray/20">
+                                <p class="text-2xl font-bold text-white mb-1">Confianza</p>
+                                <p class="text-xs text-opti-gray">Transparencia y dedicación en cada recomendación.</p>
+                            </div>
+                            <img src="https://images.unsplash.com/photo-1598880940371-c756e0154eb4?auto=format&fit=crop&w=500&q=80" alt="Detalle de montura óptica" class="w-full h-64 object-cover rounded-2xl border border-opti-dark" onerror="this.src='https://placehold.co/400x500/292929/ffffff?text=Monturas'">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 7. EXPERIENCIA DEL CLIENTE -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="max-w-3xl mx-auto space-y-6">
+                    <span class="text-xs font-semibold uppercase tracking-widest text-opti-gray">Filosofía de atención</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-opti-black tracking-tight">Tu elección ideal comienza con una buena asesoría.</h2>
+                    <p class="text-opti-gray text-lg leading-relaxed">
+                        Buscamos que cada persona encuentre lentes con los que pueda ver cómodamente y sentirse bien con su imagen.
+                    </p>
+                    <div class="pt-6 flex justify-center">
+                        <div class="inline-flex items-center space-x-3 bg-opti-light px-6 py-3 rounded-full border border-opti-light">
+                            <i class="fa-solid fa-circle-check text-green-600"></i>
+                            <span class="text-sm font-medium text-opti-black">Comprometidos con tu bienestar visual y tu estilo personal</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN 8. PROMOCIONES Y NOVEDADES -->
+        <section class="py-24 bg-opti-light/50 border-t border-opti-light">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-16">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-widest text-opti-gray">Actualidad</span>
+                        <h2 class="text-3xl sm:text-4xl font-bold text-opti-black mt-2 tracking-tight">Promociones y novedades</h2>
+                    </div>
+                    <p class="text-opti-gray mt-4 md:mt-0 max-w-md text-sm">
+                        Nuevos ingresos, colecciones destacadas y recomendaciones especiales listas para ti.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    
+                    <!-- Tarjeta Promoción 1 -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-opti-light flex flex-col sm:flex-row shadow-sm hover:shadow-lg transition-all">
+                        <div class="sm:w-1/2 relative h-64 sm:h-auto">
+                            <img src="https://images.unsplash.com/photo-1508296695146-257a814070b4?auto=format&fit=crop&w=600&q=80" alt="Nuevos ingresos" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/292929/ffffff?text=Nuevos+Ingresos'">
+                            <span class="absolute top-4 left-4 bg-opti-black text-white text-xs font-semibold px-3 py-1 rounded-full">Nuevos Ingresos</span>
+                        </div>
+                        <div class="sm:w-1/2 p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-opti-black mb-2">Colección Sol 2026</h3>
+                                <p class="text-opti-gray text-sm leading-relaxed mb-4">Descubre los nuevos diseños en gafas de sol con protección UV avanzada y líneas vanguardistas.</p>
+                            </div>
+                            <div>
+                                <a href="#" onclick="handleWhatsAppClick('Hola, me interesa conocer los detalles de la Colección Sol 2026.', event)" class="inline-flex items-center space-x-2 text-sm font-semibold text-opti-black hover:text-opti-gray transition-colors">
+                                    <span>Consultar disponibilidad</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tarjeta Promoción 2 -->
+                    <div class="bg-white rounded-2xl overflow-hidden border border-opti-light flex flex-col sm:flex-row shadow-sm hover:shadow-lg transition-all">
+                        <div class="sm:w-1/2 relative h-64 sm:h-auto">
+                            <img src="https://images.unsplash.com/photo-1577803645773-f96470509666?auto=format&fit=crop&w=600&q=80" alt="Asesoría de cristales" class="w-full h-full object-cover" onerror="this.src='https://placehold.co/400x400/292929/ffffff?text=Asesoria+Cristales'">
+                            <span class="absolute top-4 left-4 bg-opti-dark text-white text-xs font-semibold px-3 py-1 rounded-full">Recomendado</span>
+                        </div>
+                        <div class="sm:w-1/2 p-8 flex flex-col justify-between">
+                            <div>
+                                <h3 class="text-xl font-bold text-opti-black mb-2">Asesoría en Cristales</h3>
+                                <p class="text-opti-gray text-sm leading-relaxed mb-4">Te ayudamos a elegir el tipo de cristal ideal (monofocal o multifocal) según tu fórmula y estilo de vida.</p>
+                            </div>
+                            <div>
+                                <a href="#" onclick="handleWhatsAppClick('Hola, me gustaría recibir asesoría sobre cristales y tratamientos ópticos.', event)" class="inline-flex items-center space-x-2 text-sm font-semibold text-opti-black hover:text-opti-gray transition-colors">
+                                    <span>Consultar por WhatsApp</span>
+                                    <i class="fa-solid fa-arrow-right text-xs"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- SECCIÓN 9. LLAMADA A LA ACCIÓN -->
+        <section class="py-24 bg-opti-black text-white text-center">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+                <span class="text-xs font-semibold uppercase tracking-widest text-opti-gray">Estamos para ayudarte</span>
+                <h2 class="text-3xl sm:text-5xl font-bold tracking-tight text-white">
+                    Encuentra los lentes perfectos para ti.
+                </h2>
+                <p class="text-opti-gray text-base sm:text-lg max-w-2xl mx-auto leading-relaxed">
+                    Estamos aquí para ayudarte a elegir. Escríbenos y recibe asesoría personalizada sobre modelos, cristales, precios y disponibilidad.
+                </p>
+                <div class="pt-6">
+                    <a href="#" onclick="handleWhatsAppClick('Hola, quiero hablar con un asesor de Opti Frame para encontrar mis lentes perfectos.', event)" class="inline-flex items-center space-x-3 bg-white text-opti-black px-8 py-4 rounded-xl text-base font-semibold hover:bg-opti-light transition-all duration-300 shadow-xl">
+                        <i class="fa-brands fa-whatsapp text-xl text-green-600"></i>
+                        <span>Hablar por WhatsApp</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- SECCIÓN 10. PIE DE PÁGINA -->
+    <footer id="contacto" class="bg-opti-dark text-white pt-16 pb-12 border-t border-opti-gray/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-opti-gray/20">
+                
+                <!-- Columna 1: Marca -->
+                <div class="lg:col-span-2 space-y-4">
+                    <h3 class="text-2xl font-bold tracking-tighter text-white">OPTI FRAME</h3>
+                    <p class="text-opti-gray text-sm italic">"En Opti Frame, ver bien también es verte bien."</p>
+                    <p class="text-opti-gray text-sm leading-relaxed max-w-sm">
+                        Especialistas en soluciones visuales, monturas de moda, lentes ópticos y asesoría personalizada.
+                    </p>
+                </div>
+
+                <!-- Columna 2: Navegación -->
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">Navegación</h4>
+                    <ul class="space-y-3 text-sm text-opti-gray">
+                        <li><a href="#inicio" class="hover:text-white transition-colors">Inicio</a></li>
+                        <li><a href="#categorias" class="hover:text-white transition-colors">Nuestros productos</a></li>
+                        <li><a href="#opticos" class="hover:text-white transition-colors">Lentes ópticos</a></li>
+                        <li><a href="#sol" class="hover:text-white transition-colors">Lentes de sol</a></li>
+                        <li><a href="#nosotros" class="hover:text-white transition-colors">Sobre nosotros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Categorías -->
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">Categorías</h4>
+                    <ul class="space-y-3 text-sm text-opti-gray">
+                        <li><a href="#categorias" class="hover:text-white transition-colors">Monturas Mujer</a></li>
+                        <li><a href="#categorias" class="hover:text-white transition-colors">Monturas Hombre</a></li>
+                        <li><a href="#categorias" class="hover:text-white transition-colors">Lentes Niños</a></li>
+                        <li><a href="#categorias" class="hover:text-white transition-colors">Cristales Graduados</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 4: Contacto y Redes -->
+                <div>
+                    <h4 class="text-sm font-semibold uppercase tracking-wider text-white mb-4">Contacto</h4>
+                    <ul class="space-y-3 text-sm text-opti-gray">
+                        <li>
+                            <a href="#" onclick="handleWhatsAppClick(null, event)" class="hover:text-white transition-colors inline-flex items-center space-x-2">
+                                <i class="fa-brands fa-whatsapp text-green-500"></i>
+                                <span>Consultar por WhatsApp</span>
+                            </a>
+                        </li>
+                        <li>
+                            <span class="text-xs text-opti-gray block mt-2">Redes Sociales:</span>
+                            <div class="flex space-x-4 mt-2">
+                                <a href="#" onclick="handleWhatsAppClick('Hola, visito su perfil de Instagram y quiero consultar por sus productos.', event)" class="w-9 h-9 rounded-full bg-opti-black flex items-center justify-center text-white hover:bg-white hover:text-opti-black transition-colors" title="Instagram">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="#" onclick="handleWhatsAppClick(null, event)" class="w-9 h-9 rounded-full bg-opti-black flex items-center justify-center text-white hover:bg-white hover:text-opti-black transition-colors" title="WhatsApp">
+                                    <i class="fa-brands fa-whatsapp"></i>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Fila inferior copyright -->
+            <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-opti-gray">
+                <p>&copy; 2026 Opti Frame. Todos los derechos reservados.</p>
+                <p class="mt-4 sm:mt-0">Calidad, estilo y atención personalizada.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript para interactividad del menú móvil y modal -->
+    <script>
+        // Menú móvil toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Modal de WhatsApp functions
+        const whatsappModal = document.getElementById('whatsapp-modal');
+        const whatsappModalContent = document.getElementById('whatsapp-modal-content');
+
+        function openWhatsappModal() {
+            whatsappModal.classList.remove('hidden');
+            setTimeout(() => {
+                whatsappModal.classList.remove('opacity-0');
+                whatsappModalContent.classList.remove('scale-95');
+                whatsappModalContent.classList.add('scale-100');
+            }, 10);
+        }
+
+        function closeWhatsappModal() {
+            whatsappModal.classList.add('opacity-0');
+            whatsappModalContent.classList.remove('scale-100');
+            whatsappModalContent.classList.add('scale-95');
+            setTimeout(() => {
+                whatsappModal.classList.add('hidden');
+            }, 300);
+        }
+
+        // Cerrar modal haciendo clic fuera
+        whatsappModal.addEventListener('click', (e) => {
+            if (e.target === whatsappModal) {
+                closeWhatsappModal();
+            }
+        });
+
+        // Actualizar enlaces de WhatsApp dinámicamente si el número está configurado
+        window.addEventListener('DOMContentLoaded', () => {
+            if (WHATSAPP_CONFIG.phoneNumber !== "NUMERO_COMERCIAL") {
+                const links = document.querySelectorAll('a[onclick*="handleWhatsAppClick"]');
+                // Los enlaces usan la función onclick para manejar el comportamiento de forma inteligente.
+            }
+        });
+    </script>
+</body>
+</html>
